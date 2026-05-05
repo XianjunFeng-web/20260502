@@ -26,7 +26,12 @@ if uploaded_file is not None:
     # Stage 1: Image to Text (Using the function)
     st.text('Processing img2text...')
     scenario = img2text(uploaded_file.name)
-    st.write(f"**Scenario:** {scenario}")
+    
+    image_to_text_model = pipeline("image-to-text", model="Salesforce/blip-image-captioning-base")
+    
+    text = image_to_text_model(url)[0]["generated_text"]
+    scenario = img2text(uploaded_file.name)
+    st.write(f"**Scenario(New):** {scenario}")
 
     # Stage 2: Text to Story (Inline)
     st.text('Generating a story...')
