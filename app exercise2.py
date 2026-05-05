@@ -28,7 +28,7 @@ if uploaded_file is not None:
     
     scenario = image_to_text_model(uploaded_file.name)[0]["generated_text"]
     
-    st.write(f"**Scenario(New):** {scenario}")
+    st.write(f"***Scenario(New):*** {scenario}")
 
     # Stage 2: Text to Story (Inline)
     st.text('Generating a story...')
