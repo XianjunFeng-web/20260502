@@ -26,7 +26,7 @@ if uploaded_file is not None:
                                    model="Salesforce/blip-image-captioning-base")
     
     
-    scenario = image_to_text_model(uploaded_file.name)(0)["generated_text"]
+    scenario = image_to_text_model(uploaded_file.name)[0]["generated_text"]
     
     st.write(f"**Scenario(New):** {scenario}")
 
