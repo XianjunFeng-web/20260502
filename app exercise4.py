@@ -38,6 +38,21 @@ if uploaded_file is not None:
             labels = [p['label'] for p in age_predictions]
             scores = [p['score'] for p in age_predictions]
             st.bar_chart(data=dict(zip(labels, scores)))
+"
+        
+        # Sort predictions by score (highest first)
+        age_predictions = sorted(age_predictions, key=lambda x: x['score'], reverse=True)
+        
+        # Display results
+        top_prediction = age_predictions[0]
+        st.success(f""**Predicted Age Range: {top_prediction['label']}**"")
+        st.write(f""Confidence Score: {top_prediction['score']:.2%}"")
+        
+        # Optional: Show all probabilities in a chart
+        with st.expander(""See detailed probabilities""):
+            labels = [p['label'] for p in age_predictions]
+            scores = [p['score'] for p in age_predictions]
+            st.bar_chart(data=dict(zip(labels, scores)))
 
 
 
