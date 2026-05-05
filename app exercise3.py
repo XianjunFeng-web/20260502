@@ -3,7 +3,7 @@ from PIL import Image
 import time
 
 # Function part
-def main()
+def main():
 
   # App title
   st.title("Streamlit Demo on Hugging Face")
