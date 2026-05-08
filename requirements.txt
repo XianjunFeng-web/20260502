@@ -2,3 +2,7 @@ streamlit
 transformers<5.0.0
 Pillow
 torch
+streamlit
+transformers
+torch
+pillow
